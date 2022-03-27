@@ -1,8 +1,8 @@
 const inputEl = document.querySelector('input#font-size-control');
 const outputEl = document.querySelector('span#text');
 
-inputEl.addEventListener('input', refreshFontSize);
+inputEl.addEventListener('input', onFontSizeInput);
 
-function refreshFontSize(){
+function onFontSizeInput(){
     outputEl.style.fontSize = `${this.value}px`;
 }
