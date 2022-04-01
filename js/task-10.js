@@ -1,4 +1,5 @@
 const containerEl = document.querySelector('div#boxes');
+let blockSize = 30;
 
 const controlsRef = {
   number : document.querySelector('input[type=number]'),
@@ -21,7 +22,8 @@ function getRandomHexColor() {
 function createBoxes(amount) {
   const newElements = [];
   for (let i = 0; i < amount; i += 1) {
-    newElements.push(createRandomBox(30 + (10 * i)));
+    newElements.push(createRandomBox(blockSize));
+    blockSize += 10;
   }
   // console.log(newElements);
   containerEl.append(...newElements);
@@ -37,5 +39,6 @@ function createRandomBox(size) {
 
 function onDestroyBtnClick() {
   // console.log('destroy btn');
+  blockSize = 30;
   containerEl.innerHTML = '';
 }
