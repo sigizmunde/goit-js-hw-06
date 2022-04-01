@@ -13,10 +13,6 @@ const images = [
   },
 ];
 
-const elementStrings = [];
-
-for (const image of images) {
-  elementStrings.push(`<li class="gallery-item"><img src="${image.url}" alt="${image.alt}" /></li>`);
-}
+const elementStrings = images.map(image => `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}" /></li>`);
 
 document.querySelector('.gallery').insertAdjacentHTML('beforeend', elementStrings.join(''));
